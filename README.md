@@ -13,6 +13,7 @@ Pufferphish is a phising toolkit written in nodejs, it uses realtime websocket c
 ```
 git clone https://github.com/ngn13/pufferphish.git
 cd pufferphish
+npm install
 npm run start
 ```
 
