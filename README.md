@@ -1,8 +1,12 @@
 <h1 align="center">
     Pufferphish | A phishing toolkit
 </h1>
-<p align="center">Pufferphish is a phising toolkit written in nodejs, it uses realtime websocket connection
-to communicate with the attacker server. </p>
+<img src="assets/showcase.gif">
+<p align="center">
+Pufferphish is a phising toolkit written in nodejs, it uses realtime websocket connection to communicate with the attacker server. 
+</p>
+
+
 
 
 ## 😋 Setup
