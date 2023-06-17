@@ -1,0 +1,7 @@
+{
+  "template": "microsoft",
+  "port": 8080,
+  "path": "/",
+  "logfile": true,
+  "blacklist": []
+}

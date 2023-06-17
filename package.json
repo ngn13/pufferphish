@@ -1,0 +1,26 @@
+{
+  "name": "pufferphish",
+  "version": "1.0.0",
+  "description": "A phishing toolkit",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ngn13/pufferphish.git"
+  },
+  "author": "ngn",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ngn13/pufferphish/issues"
+  },
+  "homepage": "https://github.com/ngn13/pufferphish#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "socket.io": "^4.6.2",
+    "ws": "^8.13.0"
+  }
+}

