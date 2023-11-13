@@ -12,10 +12,10 @@ Pufferphish is a phising toolkit written in nodejs, it uses realtime websocket c
 ## 😋 Setup
 ### ...with Docker 
 You can easily setup pufferphish with docker (assuming you already have docker installed):
-```
+```bash
 git clone https://github.com/ngn13/pufferphish.git && cd pufferphish 
 docker build -t pufferphish .
-docker run -d -v $PWD/config.json:/app/config.json \
+docker run -d -v $PWD/config.json:/app/config.json   \
               -v $PWD/templates:/app/templates     \
               -v $PWD/logs:/app/logs               \
               -p 80:8080                           \
