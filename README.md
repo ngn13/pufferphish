@@ -68,9 +68,6 @@ If you want, you can also create your own template, see the [example template](t
 - ### `path`
 The path that the web server will serve the template
 
-- ### `logfile`
-If set to `true`, the websocket server will log all the connection to `logs.txt` file
-
 - ### `blacklist`
 List of blacklisted IPs, webserver will return with 404 to these
 
