@@ -75,4 +75,4 @@ If set to `true`, the websocket server will log all the connection to `logs.txt`
 List of blacklisted IPs, webserver will return with 404 to these
 
 ## ❤️  Support
-If you want to support this project leave a star. Also consider contributing, am open for PRs and issues!
+If you want to support this project leave a star. Also consider contributing, I am open for PRs and issues!
