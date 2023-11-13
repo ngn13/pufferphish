@@ -1,5 +1,5 @@
 <h1 align="center">
-    Pufferphish | A phishing toolkit
+    Pufferphish 🐡 A phishing toolkit
 </h1>
 <img src="assets/showcase.gif">
 <p align="center">
@@ -31,7 +31,7 @@ npm install
 npm run start
 ```
 
-## Nginx Reverse Proxy
+### Nginx Reverse Proxy
 You can use nginx reverse proxy for HTTPS. Here is configuration that you can 
 copy and paste:
 ```conf
@@ -50,9 +50,7 @@ server {
 }
 ```
 
-<details>
-<summary><h2>⚙️ Configuration</h2></summary>
-
+## ⚙️ Configuration</h2>
 All the configuration is in the `config.json` file, here are the options:
 
 - ### `port`
@@ -76,8 +74,5 @@ If set to `true`, the websocket server will log all the connection to `logs.txt`
 - ### `blacklist`
 List of blacklisted IPs, webserver will return with 404 to these
 
-</details>
-
 ## ❤️  Support
-If you want to support this project leave a star.
-Also consider contributing, I am open for PRs!
+If you want to support this project leave a star. Also consider contributing, am open for PRs and issues!
