@@ -1,7 +1,7 @@
 {
-	"host": "",
-	"path": "/login",
-	"template": "microsoft",
-	"blacklist": [],
+  "host": "",
+  "path": "/login",
+  "template": "microsoft",
+  "blacklist": [],
   "ip_header": ""
 }
