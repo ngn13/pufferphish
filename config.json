@@ -1,6 +1,0 @@
-{
-  "template": "microsoft",
-  "blacklist": [],
-  "port": 8080,
-  "path": "/"
-}

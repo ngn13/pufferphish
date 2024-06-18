@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <!--
-This is an example template
-to show you how you can create your
+This is an example template to show you how you can create your
 own templates
 -->
 <html lang="en">
@@ -16,20 +15,22 @@ own templates
   -->
   <h1>Fake Login Page Example</h1>
   <!--
-  when an element with the ID "submit"
-  gets clicked, "user" and "pass" gets sent to 
-  the server (see static/script.js)
+  when an form with the ID "PF_form" is submitted, "PF_user" and "PF_pass" gets sent to the server (see static/script.js)
   -->
-  <input type="text" placeholder="Username" id="user">
-  <input type="password" placeholder="Password" id="pass">
-  <button id="submit">Login</button>
+  <form id="PF_form">
+    <input type="text" placeholder="Username" id="PF_user" required>
+    <input type="password" placeholder="Password" id="PF_pass" required>
+    <button type="submit">Login</button>
+  </form>
   <!--
-  these are the scripts that are used to 
-  communicate with the server, if you are 
-  not sure what you are doing, just leave
-  them here
+  these are the scripts that are used to communicate with the server, if you are 
+  not sure what you are doing, just leave them here
   -->
-  <script type="module" src="/static/script.js">
+  <script>
+    const session = "{{.session}}"
+    const report  = "{{.report}}"
+  </script>
+  <script type="module" src="{{.static}}/script.js">
   <script>
     // place your js code here (or link it)
     const submit = document.getElementById("submit")

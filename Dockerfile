@@ -1,8 +1,21 @@
-FROM node:20.8.1-slim
+FROM golang:1.22.4 as go
 
-COPY . /app
-RUN rm -rf /app/node_modules
 WORKDIR /app
-RUN npm install
 
-CMD ["npm", "run", "start"]
+COPY session ./session
+COPY config  ./config
+COPY util    ./util
+COPY log     ./log
+COPY *.mod   ./
+COPY *.sum   ./
+COPY *.go    ./
+
+RUN CGO_ENABLED=0 go build
+
+FROM alpine as main
+
+WORKDIR /app
+
+COPY --from=go /app/pufferphish ./
+
+CMD ["./pufferphish"]
