@@ -27,7 +27,7 @@ Note that you will need restart the container after changing the configuration.
 ### ...without Docker
 First install a recent version of `go`, then download the latest release archive:
 ```bash
-wget https://github.com/ngn13/ezcat/archive/refs/tags/v2.0.tar.gz
+wget https://github.com/ngn13/pufferphish/archive/refs/tags/v2.0.tar.gz
 tar xvf v2.0.tar.gz && cd pufferphish-2.0
 go build && ./pufferphish
 ```
