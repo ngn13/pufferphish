@@ -31,7 +31,7 @@ func (c *Type) Read() (error){
   }
 
   if c.Host == "" {
-    log.Warn("Host not specified in the configuration, using \"0.0.0.0:8080\"")
+    log.Warn("Host not specified in the configuration, using 0.0.0.0:8080")
     c.Host = "0.0.0.0:8080"
   }
 

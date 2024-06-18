@@ -158,6 +158,9 @@ func main(){
 
   app.All("*", notfound)
 
+  log.Info("Starting the pufferphish on %s 🐡", conf.Host)
+  log.Info("The phishing template is served at %s", conf.Path)
+
   err = app.Listen(conf.Host);
   if err != nil {
     log.Err("Failed to start the server: %s", err.Error())

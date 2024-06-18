@@ -12,13 +12,14 @@ Pufferphish is a phising toolkit written in Go, it uses realtime websocket conne
 ### ...with Docker
 You can easily setup pufferphish with docker (assuming you already have docker installed):
 ```bash
-wget https://github.com/ngn13/ezcat/archive/refs/tags/v2.0.tar.gz
-tar xvf v2.0.tar.gz && cd pufferphish-2.0
+mkdir pufferphish
+wget https://github.com/ngn13/ezcat/releases/download/v2.0/pufferphish_2.0.tar.gz
+tar xvf pufferphish_2.0.tar.gz
 docker run -d -v $PWD/config.json:/app/config.json \
               -v $PWD/templates:/app/templates     \
               -v $PWD/static:/app/static           \
               -v $PWD/logs:/app/logs               \
-              -p 80:8080                           \
+              --network host                       \
               ghcr.io/ngn13/pufferphish
 ```
 Note that you will need restart the container after changing the configuration.
