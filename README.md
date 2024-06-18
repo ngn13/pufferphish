@@ -1,5 +1,5 @@
 <h1 align="center">
-    Pufferphish 🐡 A phishing toolkit
+    Pufferphish 🐡 Simple phishing toolkit
 </h1>
 
 https://github.com/ngn13/pufferphish/assets/78868991/f04e76df-48bf-4e45-b583-bc81a673911c
