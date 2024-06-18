@@ -2,6 +2,8 @@
     Pufferphish 🐡 A phishing toolkit
 </h1>
 
+https://github.com/ngn13/pufferphish/assets/78868991/f04e76df-48bf-4e45-b583-bc81a673911c
+
 <p align="center">
 Pufferphish is a phising toolkit written in Go, it uses realtime websocket connection to communicate with the server.
 </p>
